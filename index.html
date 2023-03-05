@@ -4,7 +4,7 @@
     <title>Help Lightning</title>
   </head>
   <body style="padding: 25px;">
-    <img src="https://helplightning.com/images/2021/09/help-lightning-logo.png" alt="Help Lightning" style="margin-bottom: 25px;" />
+    <img src="https://helplightning.com/images/2021/09/help-lightning-logo.png" alt="Help Lightning" style="margin-bottom: 25px; width: 450px;" />
     <h4>Help Lightning has opened up in a new browser tab.</h4>
     <p>Click the button below to reopen.</p>
     <button onclick="openWindow()">Reopen</button>
@@ -15,5 +15,7 @@
   function openWindow() {
     window.open('https://helplightning.com', '_blank')
   }
-  openWindow()
+  (function () {
+    openWindow()
+  })();
 </script>
