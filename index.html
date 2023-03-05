@@ -4,7 +4,7 @@
     <title>Help Lightning</title>
   </head>
   <body style="padding: 25px;">
-    <img src="https://helplightning.com/images/2021/09/help-lightning-logo.png" alt="Help Lightning" style="margin-bottom: 25px; width: 450px;" />
+    <img src="https://helplightning.com/images/2021/09/help-lightning-logo.png" alt="Help Lightning" style="" />
     <h4>Help Lightning has opened up in a new browser tab.</h4>
     <p>Click the button below to reopen.</p>
     <button onclick="openWindow()">Reopen</button>
@@ -12,10 +12,34 @@
 </html>
 
 <script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const region = urlParams.get('region')
+  const url = region === 'eu' ? 'https://app.eu1.helplightning.net' : 'https://app.helplightning.net'
+
   function openWindow() {
-    window.open('https://helplightning.com', '_blank')
+    window.open(url, '_blank')
   }
+  
   (function () {
     openWindow()
   })();
 </script>
+
+<style>
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  img {
+    margin-bottom: 25px; width: 450px;
+  }
+</style>
